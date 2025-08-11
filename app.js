@@ -21,3 +21,13 @@ function actualizarLista() {
     }
 }
 
+function sortearAmigo() {
+    if(nombres.length === 0) {
+        alert("No hay amigos para sortear. Por favor, agregue al menos un amigo");
+        return;
+    }
+    let indiceAleatorio = Math.floor(Math.random() * nombres.length);
+    let amigoSeleccionado = nombres[indiceAleatorio];
+    document.getElementById("resultado").innerHTML = `El amigo seleccionado es: ${amigoSeleccionado}`;
+}
+
