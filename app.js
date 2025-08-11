@@ -6,10 +6,18 @@ function agregarAmigo() {
     nombre = document.getElementById("amigo").value;
     if(nombre != "") {
         nombres.push(nombre);
-        document.getElementById("listaAmigos").innerHTML += `<li>${nombre}</li>`;
     } else {
         alert("Por favor, ingrese un nombre");
     }
     document.getElementById("amigo").value = "";
+    actualizarLista();
+}
+
+function actualizarLista() {
+    let lista = document.getElementById("listaAmigos");
+    lista.innerHTML = "";
+    for(let i = 0; i < nombres.length; i++) {
+        lista.innerHTML += `<li>${nombres[i]}</li>`;
+    }
 }
 
